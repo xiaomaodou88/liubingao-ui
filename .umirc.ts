@@ -1,11 +1,11 @@
 import { defineConfig } from 'dumi';
 
-let base = '/liubingao-ui';
-let publicPath = '/liubingao-ui/';
+let base:any = '/liubingao-ui';
+let publicPath:any = '/liubingao-ui/';
 
 if (process.env.SITE_BUILD_ENV === 'PREVIEW') {
   base = undefined;
-  publicPath = undefined;
+  // publicPath = undefined;
 }
 
 export default defineConfig({
