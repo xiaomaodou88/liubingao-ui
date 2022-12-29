@@ -5,7 +5,7 @@ let publicPath:any = '/liubingao-ui/';
 
 if (process.env.SITE_BUILD_ENV === 'PREVIEW') {
   base = undefined;
-  // publicPath = undefined;
+  publicPath = undefined;
 }
 
 export default defineConfig({

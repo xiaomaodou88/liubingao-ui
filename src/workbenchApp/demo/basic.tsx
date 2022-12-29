@@ -5,17 +5,17 @@ export default () => {
     const [appList, setAppList] = useState([
         {
             id: '0',
-            image:'/img/3.png',
+            image:'/liubingao-ui/img/3.png',
             name: '智慧党建'
         },
         {
             id: '1',
-            image:'/img/2.png',
+            image:'/liubingao-ui/img/2.png',
             name: '大数据'
         },
         {
             id: '2',
-            image:'/img/5.png',
+            image:'/liubingao-ui/img/5.png',
             name: '算法'
         },
     ])
