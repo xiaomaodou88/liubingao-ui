@@ -15,6 +15,6 @@ export default () => {
         <h4 style={{textAlign: 'center'}}>改变宽度</h4>
         <Progress percentInner={'70%'} linearGradien={['#FC7B03','#FCD003']} showStep={false} width='400px'/>
         <h4 style={{textAlign: 'center'}}>改变渐变色</h4>
-        <Progress percentInner={'70%'} linearGradien={['blue','#F40']} showStep={false} width='400px'/>
+        <Progress percentInner={'70%'} linearGradien={['blue','#F40']} showStep={false} width='500px'/>
     </>
 };
