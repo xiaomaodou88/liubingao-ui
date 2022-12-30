@@ -20,3 +20,15 @@ group:
 
 <API src="./index.tsx"></API>
 
+
+## open Option API
+
+引入组件后直接调用Alert.open(option)
+
+|  Name   | Description  |  Type   | Default  |
+|  ----  | ----  | ----  | ----  | 
+| kind  | 类型 | info,success,error,warning  | 'info' |
+| title  | 标题 | reactDom  | - |
+| content  | 内容 | reactDom  | - |
+| close  | 关闭后回调 | Function  | - |
+
