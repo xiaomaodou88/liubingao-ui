@@ -1,12 +1,21 @@
-import React from 'react';
-export interface AlertProps {
-    /**
-     * @description       Alert 的类型
-     * @default
-     */
-    children: any;
-    kind?: 'info' | 'positive' | 'negative' | 'warning';
+import React, { Component } from 'react';
+import './style';
+declare class Alert extends Component {
+    state: {
+        kind: string;
+        alertStatus: boolean;
+        title: string;
+        content: string;
+        close: () => void;
+    };
+    FirstChild: (props: any) => string | number | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | null;
+    confirm: () => void;
+    open: (options: any) => void;
+    close(): void;
+    shouldComponentUpdate(nextProps: any, nextState: any): boolean;
+    renderSuccess(): JSX.Element;
+    renderInfo(): JSX.Element;
+    render(): JSX.Element;
 }
-export declare type KindMap = Record<Required<AlertProps>['kind'], string>;
-declare const Alert: React.FC<AlertProps>;
-export default Alert;
+declare let Box: Alert;
+export default Box;

@@ -1,4 +1,15 @@
 {
+  "private": false,
+  "homepage": "https://xiaomaodou88.github.io/liubingao-ui/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaomaodou88/liubingao-ui.git"
+  },
+  "files": [
+    "doc-site",
+    "esm",
+    "lib"
+  ],
   "name": "liubingao-ui",
   "version": "1.4.0",
   "description": "a react ui library",
