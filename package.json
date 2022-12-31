@@ -6,12 +6,10 @@
     "url": "https://github.com/xiaomaodou88/liubingao-ui.git"
   },
   "files": [
-    "doc-site",
-    "esm",
-    "lib"
+    "esm"
   ],
   "name": "liubingao-ui",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "a react ui library",
   "main": "lib/index.js",
   "module": "esm/index.js",
