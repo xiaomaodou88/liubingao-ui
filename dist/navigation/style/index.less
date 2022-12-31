@@ -1,0 +1,37 @@
+.app-navigation {
+    height: 60px;
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+
+    .nav-item {
+        display: flex;
+        min-width: 88px;
+        padding: 0 6px;
+        margin: 0 6px;
+        cursor: pointer;
+
+        &:hover {
+            color: #4760F7;
+        }
+
+        .icon {
+            width: 18px;
+            margin-right: 10px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .active {
+        color: #4760F7;
+    }
+    .activeClass {
+        height: 100%;
+        line-height: 60px;
+        background: #4760F7;
+        color: #fff;
+    }
+}

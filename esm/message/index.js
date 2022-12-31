@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Toast from './toast';
-import './style';
+import './style/css';
 function createNotification() {
   var div = document.createElement('div');
   document.body.appendChild(div);

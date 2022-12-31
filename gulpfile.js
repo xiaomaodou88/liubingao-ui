@@ -41,11 +41,13 @@ function compileScripts(babelEnv, destDir) {
     .pipe(babel()) // 使用gulp-babel处理
     .pipe(
       through2.obj(function z(file, encoding, next) {
+        const content = file.contents.toString(encoding);
+        file.contents = Buffer.from(cssInjection(content));
         this.push(file.clone());
         // 找到目标
         if (file.path.match(/(\/|\\)style(\/|\\)index\.js/)) {
-          const content = file.contents.toString(encoding);
-          file.contents = Buffer.from(cssInjection(content)); // 处理文件内容
+          // const content = file.contents.toString(encoding);
+          // file.contents = Buffer.from(cssInjection(content)); // 处理文件内容
           file.path = file.path.replace(/index\.js/, 'css.js'); // 文件重命名
           this.push(file); // 新增该文件
           next();
@@ -72,14 +74,21 @@ function compileESM() {
   const { dest } = paths;
   return compileScripts('esm', dest.esm);
 }
+/**
+ * 编译dist
+ */
+function compileDist() {
+  const { dest } = paths;
+  return compileScripts('dist', dest.dist);
+}
 
-const buildScripts = gulp.series(compileCJS, compileESM);
+const buildScripts = gulp.series(compileCJS, compileESM, compileDist);
 
 /**
  * 拷贝less文件
  */
 function copyLess() {
-  return gulp.src(paths.styles).pipe(gulp.dest(paths.dest.lib)).pipe(gulp.dest(paths.dest.esm));
+  return gulp.src(paths.styles).pipe(gulp.dest(paths.dest.lib)).pipe(gulp.dest(paths.dest.esm)).pipe(gulp.dest(paths.dest.dist));
 }
 
 /**
@@ -92,7 +101,8 @@ function less2css() {
     .pipe(autoprefixer()) // 根据browserslistrc增加前缀
     .pipe(cssnano({ zindex: false, reduceIdents: false })) // 压缩
     .pipe(gulp.dest(paths.dest.lib))
-    .pipe(gulp.dest(paths.dest.esm));
+    .pipe(gulp.dest(paths.dest.esm))
+    .pipe(gulp.dest(paths.dest.dist));
 }
 
 const build = gulp.parallel(buildScripts, copyLess, less2css);

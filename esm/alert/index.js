@@ -13,7 +13,7 @@ import React, { Component } from 'react';
 import { is, fromJS } from 'immutable';
 import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import './style';
+import './style/css';
 var defaultState = {
   kind: 'info',
   alertStatus: false,
