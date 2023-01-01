@@ -13,7 +13,7 @@ export default () => {
         },
     ])
     const [tabBtnActId, setTabBtnActId] = useState('0')
-    const handleTabBottonClick = (id) => {
+    const handleTabBottonClick = (id:any) => {
         setTabBtnActId(id)
     }
     return  <div style={{height: '100px',background:'rgb(2 0 77)', lineHeight: '100px', textAlign: 'center' }}>
